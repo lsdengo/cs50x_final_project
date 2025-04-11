@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    touge | home
+{% endblock %}
+
+{% block body %}
+
+    <pre style="font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: -1px; line-height: 0.9;text-align: center;">
+        /$$$$$$$$  /$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$$      
+        |__  $$__/ /$$__  $$| $$  | $$ /$$__  $$| $$_____/      
+          | $$   | $$  \ $$| $$  | $$| $$  \__/| $$            
+          | $$   | $$  | $$| $$  | $$| $$ /$$$$| $$$$$         
+          | $$   | $$  | $$| $$  | $$| $$|_  $$| $$__/         
+          | $$   | $$  | $$| $$  | $$| $$  \ $$| $$            
+          | $$   |  $$$$$$/|  $$$$$$/|  $$$$$$/| $$$$$$$$      
+          |__/    \______/  \______/  \______/ |________/      
+    </pre>
+    <pre style="font: 14px/13px monospace; color: white; text-align: center;">JDM car lookup &#38; more</pre>
+    <div class="row">
+        <a href="/" class="menu">Home</a> | 
+        <a href="/search" class="menu">Search</a> | 
+        <a href="/trivia" class="menu">Trivia</a> | 
+        <a href="/about" class="menu">About</a>
+    </div>
+    <div x-data="{ era: '90s' }" class="trivia-container" style="text-align: center; margin-top: 2rem;">
+        <div>
+        <button @click="era = '90s'" :class="{ 'active': era === '90s' }" class="menu">90s</button>
+        <button @click="era = '2000s'" :class="{ 'active': era === '2000s' }" class="menu">2000s</button>
+        <button @click="era = 'modern'" :class="{ 'active': era === 'modern' }" class="menu">Modern</button>
+        </div>
+
+        <div x-show="era === '90s'" class="trivia-box">
+        <h4>The Birth of Street Drifting</h4>
+        <p>Drifting exploded in the 90s thanks to Keiichi Tsuchiya and the rise of street touge battles.</p>
+        <p><em>Initial D</em> began in 1995, making the AE86 a legend.</p>
+        <p>Affordable FR cars (Silvia, RX-7, etc.) ruled the mountain passes.</p>
+        </div>
+
+        <div x-show="era === '2000s'" class="trivia-box">
+        <h4>Police Crackdown & Rise of D1GP</h4>
+        <p>Authorities cracked down on street drifting—more cops, cameras, and road blocks.</p>
+        <p>D1 Grand Prix turned drifting into a pro motorsport in 2000.</p>
+        <p>Track days replaced late-night touge runs.</p>
+        </div>
+
+        <div x-show="era === 'modern'" class="trivia-box">
+        <h4> Global Drift Culture</h4>
+        <p>Touge drifting still exists, but it’s underground and community-driven.</p>
+        <p>YouTube, Ebisu, and grassroots events keep the spirit alive.</p>
+        <p>Initial D nostalgia and retro builds are making a huge comeback.</p>
+        </div>
+    </div>
+    <div>
+        <br>
+        <h3>Famous Mountain Passes in Japan</h3>
+        <hr>
+        <p>Irohazaka (いろは坂)</p>
+        <p>Location: Nikko, Tochigi Prefecture</p>
+        <img alt="Image of a driver driving on Irohazaka mountain pass" class="images-class"
+        src="static/images/Old-Drift-Video_ccexpress.jpg">
+        <br>
+        <p>Hakone Turnpike (箱根ターンパイク)</p>
+        <p>Location: Hakone, Kanagawa Prefecture</p>
+        <img alt="Image of Hakone Turnpike" class="images-class" src="static/images/9969dfe5e4f6de799fb3f119d1f49be1.jpg">
+        <br>
+        <p>Nagano Prefecture (長野県)</p>
+        <p>Location: Various passes around Nagano, such as the Shiga Kogen (志賀高原)</p>
+        <img alt="Image of parked car on road" class="images-class" src="static/images/5aaef0fc5dadf8f4b547db25b5048f7f.jpg">
+        <br>
+        <p>Usui Pass (碓氷峠)</p>
+        <p>Location: Between Gunma and Nagano Prefectures</p>
+        <img alt="Image of Mountain pass road in Japan" class="images-class"
+        src="static/images/9f43589bcc7e777c82db7938f93437ff.jpg">
+    </div>
+{% endblock %}
