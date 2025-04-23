@@ -25,9 +25,9 @@
     </div>
     <div x-data="{ era: '90s' }" class="trivia-container" style="text-align: center; margin-top: 2rem;">
         <div>
-        <button @click="era = '90s'" :class="{ 'active': era === '90s' }" class="menu">90s</button>
-        <button @click="era = '2000s'" :class="{ 'active': era === '2000s' }" class="menu">2000s</button>
-        <button @click="era = 'modern'" :class="{ 'active': era === 'modern' }" class="menu">Modern</button>
+        <button @click="era = '90s'" :class="{ 'active': era === '90s' }" class="button">90s</button>
+        <button @click="era = '2000s'" :class="{ 'active': era === '2000s' }" class="button">2000s</button>
+        <button @click="era = 'modern'" :class="{ 'active': era === 'modern' }" class="button">Modern</button>
         </div>
 
         <div x-show="era === '90s'" class="trivia-box">
@@ -54,7 +54,6 @@
     <div>
         <br>
         <h3>Famous Mountain Passes in Japan</h3>
-        <hr>
         <p>Irohazaka (いろは坂)</p>
         <p>Location: Nikko, Tochigi Prefecture</p>
         <img alt="Image of a driver driving on Irohazaka mountain pass" class="images-class"

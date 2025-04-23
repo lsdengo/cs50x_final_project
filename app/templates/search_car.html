@@ -1,12 +1,11 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    touge | home
+    touge | {{ car.manufacturer }} {{ car.model }}
 {% endblock %}
 
 {% block body %}
-
-    <pre style="font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: -1px; line-height: 0.9;text-align: center;">
+     <pre style="font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: -1px; line-height: 0.9;text-align: center;">
         /$$$$$$$$  /$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$$      
         |__  $$__/ /$$__  $$| $$  | $$ /$$__  $$| $$_____/      
           | $$   | $$  \ $$| $$  | $$| $$  \__/| $$            
@@ -23,12 +22,20 @@
         <a href="/trivia" class="menu">Trivia</a> | 
         <a href="/about" class="menu">About</a>
     </div>
+    <br>
     <div>
+      {% if car.image_url %}
+        <img class="images-class" src="{{ url_for('static', filename=car.image_url[7:]) }}" alt="{{ car.model }}">
+      {% endif %}
+      <p><strong>Manufacturer:</strong> {{ car.manufacturer }}</p>
+      <p><strong>Model:</strong> {{ car.model }}</p>
+      <p><strong>Year:</strong> {{ car.year }}</p>
+      <p><strong>Engine:</strong> {{ car.engine }}</p>
+      <p><strong>Horsepower:</strong> {{ car.horsepower }}</p>
+      <p><strong>Drivetrain:</strong> {{ car.drivetrain }}</p>
+      <p><strong>Induction:</strong> {{ car.induction }}</p>
+      <p><strong>Trivia:</strong> {{ car.trivia }}</p>
       <br>
-      <h3 >How touge came to be</h3> 
-      <p>This is a very small project of mine for CS50x with a minimal tech stack and it is the very first website I have built.</p>
-      <p>It tries to achieve a minimalistic 90s vibe. I hope it serves well.</p>
-      <br>
-      <img alt="Image of cars drifting down a mountain pass" class="images-class" src="static/images/aboutimg2.jpg">
-         
-{% endblock %}
+      <p><a href="/search" class="menu">← Back to search</a></p>
+    </div>
+  {% endblock %}                
